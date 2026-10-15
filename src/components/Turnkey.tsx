@@ -1,6 +1,7 @@
 import { ArrowDown } from 'lucide-react'
 import { turnkeyImage } from '../data/projects'
 import { turnkeyPath } from '../data/process'
+import Reveal from './Reveal'
 
 export default function Turnkey() {
 
@@ -52,15 +53,15 @@ export default function Turnkey() {
             </div>
           </div>
 
-          <div className="relative aspect-[4/5] md:aspect-[4/4.2] overflow-hidden bg-stone">
-              <img
-                src={turnkeyImage.src}
-                alt={turnkeyImage.alt}
-                loading="lazy"
-                className="w-full h-full object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+          <Reveal className="relative aspect-[4/5] md:aspect-[4/4.2] overflow-hidden bg-stone">
+            <img
+              src={turnkeyImage.src}
+              alt={turnkeyImage.alt}
+              loading="lazy"
+              className="w-full h-full object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </Reveal>
         </div>
       </div>
     </section>

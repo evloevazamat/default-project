@@ -30,12 +30,15 @@ export default function Header() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-16 md:h-[72px]">
-        <a href="/" className="flex flex-col leading-none select-none" onClick={closeMenu}>
-          <span className="text-base md:text-lg font-semibold tracking-[0.25em] text-bone">
-            {SITE.name}
-          </span>
-          <span className="mt-1 text-[8px] md:text-[9px] tracking-[0.3em] text-ash">
-            {SITE.subtitle}
+        <a href="/" className="flex items-center gap-2 md:gap-2.5 leading-none select-none" onClick={closeMenu}>
+          <img
+            src="/img/logo.jpg"
+            alt={SITE.name}
+            className="h-11 md:h-12 w-auto object-contain"
+            loading="eager"
+          />
+          <span className="text-[22px] md:text-[28px] font-semibold tracking-[0.28em] text-bone uppercase -mr-[0.28em]">
+            Contour
           </span>
         </a>
 
@@ -71,10 +74,7 @@ export default function Header() {
 
       {menuOpen && (
         <div className="lg:hidden fixed right-0 top-16 bottom-0 w-[88%] max-w-[380px] bg-black z-40 flex flex-col border-t border-l border-bone/10 px-6 md:px-8 pt-3 pb-6 animate-slide-in-right">
-          <div className="flex items-baseline justify-between mb-1 animate-fade-in">
-            <span className="text-xs tracking-[0.34em] text-bone uppercase font-medium">Меню</span>
-            <span className="text-[9px] tracking-[0.3em] text-ash uppercase">Menu</span>
-          </div>
+          <div className="mb-1" aria-hidden="true" />
           <nav className="flex flex-col">
             {NAV.map((link, i) => (
               <a

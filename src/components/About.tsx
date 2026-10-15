@@ -1,4 +1,5 @@
 import { aboutImage } from '../data/projects'
+import Reveal from './Reveal'
 
 const disciplines = [
   { number: '01', label: 'Архитектура' },
@@ -57,7 +58,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <Reveal className="order-1 lg:order-2">
             <div className="relative aspect-[4/5] md:aspect-[3/3.3] bg-stone overflow-hidden">
               <img
                 src={aboutImage.src}
@@ -67,7 +68,7 @@ export default function About() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

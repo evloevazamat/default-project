@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { projects } from '../data/projects'
 import { CONTACTS } from '../config'
+import Reveal from '../components/Reveal'
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>()
@@ -62,7 +63,7 @@ export default function ProjectDetail() {
           </div>
         </header>
 
-<div className="relative max-w-4xl overflow-hidden aspect-[16/9] bg-stone mb-px">
+<Reveal className="relative max-w-4xl overflow-hidden aspect-[16/9] bg-stone mb-px">
           <img
             src={project.image}
             alt={project.alt}
@@ -70,7 +71,7 @@ export default function ProjectDetail() {
             className="w-full h-full object-cover"
             sizes="(max-width: 896px) 100vw, 896px"
           />
-        </div>
+        </Reveal>
 
         <div className="py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
@@ -99,8 +100,9 @@ export default function ProjectDetail() {
 
         <div className="py-12 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {project.gallery.map((img, i) => (
-            <div
+            <Reveal
               key={i}
+              delay={(i % 2) * 140}
               className={`overflow-hidden bg-stone aspect-[4/3] ${
                 i % 2 === 1 ? 'md:mt-16' : ''
               }`}
@@ -112,7 +114,7 @@ export default function ProjectDetail() {
                 className="w-full h-full object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
+            </Reveal>
           ))}
         </div>
 

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { projects } from '../data/projects'
+import Reveal from './Reveal'
 
 type Filter = 'all' | 'interior' | 'architecture'
 
@@ -54,7 +55,7 @@ export default function Projects() {
                 key={project.id}
                 className="group block grid grid-cols-12 items-end gap-y-6 md:gap-x-10"
               >
-                <div
+                <Reveal
                   className={`col-span-12 ${wide ? 'md:col-span-12' : 'md:col-span-8 md:col-start-5'} relative ${
                     wide ? 'aspect-[21/10]' : 'aspect-[16/11]'
                   } bg-stone overflow-hidden`}
@@ -66,7 +67,7 @@ export default function Projects() {
                     className="absolute inset-0 w-full h-full object-cover"
                     sizes={wide ? '(max-width: 768px) 100vw, 100vw' : '(max-width: 768px) 100vw, 66vw'}
                   />
-                </div>
+                </Reveal>
 
                 <div
                   className={`col-span-12 ${
