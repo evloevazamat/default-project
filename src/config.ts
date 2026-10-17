@@ -13,8 +13,8 @@ export const SITE = {
 
 export const NAV = [
   { label: 'Проекты', href: '#projects' },
-  { label: 'Услуги', href: '#services' },
   { label: 'О студии', href: '#about' },
+  { label: 'Услуги', href: '#services' },
   { label: 'Процесс', href: '#process' },
   { label: 'Контакты', href: '#contact' },
 ]
